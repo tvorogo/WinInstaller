@@ -19,8 +19,8 @@ jobs:
 
       - name: Define driver and UEFI URLs
         run: |
-          echo "DRIVER_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/Nabu-Drivers.zip" >> $GITHUB_ENV
-          echo "UEFI_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/SB-UEFI-v4.img" >> $GITHUB_ENV
+          echo "DRIVER_URL=https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases/download/2601.19/MiPad5-Drivers-v2601.19-Desktop.7z" >> $GITHUB_ENV
+          echo "UEFI_URL=https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases/download/2601.19/MiPad5.UEFI-v2601-19.img" >> $GITHUB_ENV
 
       - name: Set build date and artifact name
         run: |
