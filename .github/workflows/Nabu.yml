@@ -1,4 +1,4 @@
-name: Build Nabu-Installer ZIP
+name: Build Dipper-Installer ZIP
 
 on:
   workflow_dispatch:
@@ -19,26 +19,26 @@ jobs:
 
       - name: Define driver and UEFI URLs
         run: |
-          echo "DRIVER_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/Nabu-Drivers.zip" >> $GITHUB_ENV
-          echo "UEFI_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/SB-UEFI-v4.img" >> $GITHUB_ENV
+          echo "DRIVER_URL=https://github.com/n00b69/woa-dipper/releases/download/Drivers/dipper-drivers.zip" >> $GITHUB_ENV
+          echo "UEFI_URL=https://github.com/n00b69/woa-dipper/releases/download/UEFI/dipper-uefi.img" >> $GITHUB_ENV
 
       - name: Set build date and artifact name
         run: |
           BUILD_DATE=$(date '+%d-%b-%Y')
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
-          echo "ARTIFACT_NAME=nabu-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
-          echo "ZIP_NAME=NABU_WinInstaller_${BUILD_DATE}.zip" >> $GITHUB_ENV
+          echo "ARTIFACT_NAME=dipper-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
+          echo "ZIP_NAME=dipper_WinInstaller_${BUILD_DATE}.zip" >> $GITHUB_ENV
 
       - name: Generate wininstaller.conf
         run: |
           cat << EOF > wininstaller.conf
           # ================================ Configurations ================================
-          DEVICE_CODE="nabu"
+          DEVICE_CODE="dipper"
           WIN_MIN_SIZE=30
           ESP_MIN_SIZE=345
           REQUIRED_BATTERY=50
-          WIN_PART_NAME="WINNABU"
-          ESP_PART_NAME="ESPNABU"
+          WIN_PART_NAME="WINDIPPER"
+          ESP_PART_NAME="ESPDIPPER"
           SECURE_BOOT="TRUE"
           WINDOWS_EDITIONS=(
             "Windows 11 Pro"
@@ -49,8 +49,8 @@ jobs:
             "Windows 10 Pro"
             "Windows 10 Home"
           )
-          DEVICE_NAME="Xiaomi Pad 5"
-          WI_VERSION="WinInstaller_NABU_R8.3.2"
+          DEVICE_NAME="Ni 8"
+          WI_VERSION="WinInstaller_DIPPER_IDK"
           BUILD_DATE="$BUILD_DATE"
           MAINTAINER="Project-Aloha,map220v,remtrik And idk"
           # ============================== Configurations End ==============================
