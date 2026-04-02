@@ -19,9 +19,9 @@ jobs:
 
       - name: Define driver and UEFI URLs
         run: |
-          echo "DRIVER_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/Nabu_Drivers_v2601.19_hotfix.7z" >> $GITHUB_ENV
-          echo "UEFI_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/MiPad5.UEFI-v2601-19-hotfix.img" >> $GITHUB_ENV
-          echo "UEFI_boot_URL=https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/releases/download/Drivers-And-UEFI/MiPad5.UEFI-v2601-19.img" >> $GITHUB_ENV
+          echo "DRIVER_URL=https://github.com/Alexey-Proger/Port-Windows-11-Xiaomi-Pad-5/releases/download/nabu-drivers/drivers.7z" >> $GITHUB_ENV
+          echo "UEFI_URL=https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/2501.27/nabu-uefi-v4-fixed_NOSB.img" >> $GITHUB_ENV
+          echo "UEFI_boot_URL=https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/2501.27/nabu-uefi-v4-fixed_NOSB.img" >> $GITHUB_ENV
 
       - name: Set build date and artifact name
         run: |
@@ -40,7 +40,7 @@ jobs:
           REQUIRED_BATTERY=50
           WIN_PART_NAME="WINNABU"
           ESP_PART_NAME="ESPNABU"
-          SECURE_BOOT="TRUE"
+          SECURE_BOOT="FALSE"
           WINDOWS_EDITIONS=(
             "Windows 11 Pro"
             "Windows 11 IoT Enterprise LTSC 2024"
